@@ -122,6 +122,8 @@ overlay.addEventListener("click", function (e) {
 
 
 
+const currentSongReadout = document.querySelector(".current-song-readout");
+
 function newLevel() {
     freqTarget.style.visibility = "hidden";
 
@@ -140,7 +142,8 @@ function newLevel() {
 
     levelReadout.innerHTML = levelReadout.dataset.level;
 
-    audioElement.src = "music/" + SONGS[Math.floor(Math.random() * SONGS.length)] + ".ogg";
+    currentSongReadout.innerHTML = SONGS[Math.floor(Math.random() * SONGS.length)];
+    audioElement.src = "music/" + currentSongReadout.innerHTML + ".ogg";
     context.resume();
     audioElement.play();
 }

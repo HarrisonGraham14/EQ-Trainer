@@ -161,8 +161,26 @@ p {
     background-color: rgb(112, 107, 145);
 }
 
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer>* {
+    width: 18%;
+}
+
 .eq-button[data-state="on"] {
     background-color: rgb(125, 115, 188);
+    justify-self: center;
+}
+
+.current-song>p {
+    font-size: 1svw;
+    text-wrap-mode: nowrap;
 }
 
 .overlay {
