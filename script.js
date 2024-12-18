@@ -23,12 +23,12 @@ const freqSelectAreas = document.querySelectorAll(".freq-select-area");
 function eqMove(e) {
     if (eqPanel.dataset.state != "guessing") return;
 
-    var rect = eqPanel.getBoundingClientRect()
+    var rect = eqPanel.getBoundingClientRect();
     var pos = ((e.type == "mousemove" ? e.clientX : e.touches[0].pageX) - rect.left) / rect.width;
 
     if (pos < 0 || pos > 1) return;
 
-    freqSelect.style.left = (e.clientX - rect.left) + "px";
+    freqSelect.style.left = ((e.type == "mousemove" ? e.clientX : e.touches[0].pageX) - rect.left) + "px";
 
     var freq = Math.floor(55.5621 * Math.pow(414.6218, pos));
     freqSelect.dataset.frequency = freq;
@@ -47,8 +47,14 @@ const scoreReadout = document.querySelector(".score-readout");
 const levelReadout = document.querySelector(".level-readout");
 const livesReadout = document.querySelector(".lives-readout");
 
-eqPanel.addEventListener("click", function (e) {
+function eqSubmit(e) {
     if (eqPanel.dataset.state == "guessing") {
+        if (e.type == "touchend") {
+            var rect = eqPanel.getBoundingClientRect();
+            var touch = e.touches[0];
+            if (rect.left > touch.pageX || rect.right < touch.pageX || rect.top > touch.pageY || rect.bottom < touch.pageY) return;
+        }
+
         eqPanel.dataset.state = "result-mousedown";
         freqTarget.style.visibility = "visible";
         audioElement.pause();
@@ -84,7 +90,9 @@ eqPanel.addEventListener("click", function (e) {
             }
         }
     }
-});
+}
+eqPanel.addEventListener("click", eqSubmit);
+eqPanel.addEventListener("touchend", eqSubmit);
 
 
 
