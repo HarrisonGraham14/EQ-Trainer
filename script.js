@@ -138,7 +138,8 @@ function newLevel() {
 
     levelReadout.innerHTML = levelReadout.dataset.level;
 
-    audioElement.src = "music/" + SONGS[Math.floor(Math.random() * SONGS.length)] + ".mp3";
+    audioElement.src = "music/" + SONGS[Math.floor(Math.random() * SONGS.length)] + ".ogg";
+    context.resume();
     audioElement.play();
 }
 

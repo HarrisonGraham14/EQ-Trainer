@@ -1,7 +1,9 @@
 html, body {
-    height: 100svh;
+    height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
+    overflow: hidden;
 }
 
 body {
@@ -9,7 +11,7 @@ body {
     flex-direction: column;
     box-sizing:border-box;
     align-items: center;
-    overflow: hidden;
+    
 
     padding: 5svw;
 
