@@ -51,7 +51,7 @@ function eqSubmit(e) {
     if (eqPanel.dataset.state == "guessing") {
         if (e.type == "touchend") {
             var rect = eqPanel.getBoundingClientRect();
-            var touch = e.touches[0];
+            var touch = e.changedTouches[0];
             if (rect.left > touch.pageX || rect.right < touch.pageX || rect.top > touch.pageY || rect.bottom < touch.pageY) return;
         }
 
