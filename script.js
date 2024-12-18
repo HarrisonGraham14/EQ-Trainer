@@ -20,11 +20,11 @@ const freqSelect = document.querySelector(".freq-select");
 const freqReadout = document.querySelector(".freq-readout");
 const freqSelectAreas = document.querySelectorAll(".freq-select-area");
 
-eqPanel.addEventListener("mousemove", function (e) {
+function eqMove(e) {
     if (eqPanel.dataset.state != "guessing") return;
 
     var rect = eqPanel.getBoundingClientRect()
-    var pos = (e.clientX - rect.left) / rect.width;
+    var pos = ((e.type == "mousemove" ? e.clientX : e.touches[0].pageX) - rect.left) / rect.width;
 
     if (pos < 0 || pos > 1) return;
 
@@ -33,7 +33,9 @@ eqPanel.addEventListener("mousemove", function (e) {
     var freq = Math.floor(55.5621 * Math.pow(414.6218, pos));
     freqSelect.dataset.frequency = freq;
     freqReadout.innerHTML = freq > 999 ? Math.floor(freq / 1000) + "," + String(freq).substring(freq > 9999 ? 2 : 1) : freq;
-});
+}
+eqPanel.addEventListener("mousemove", eqMove);
+eqPanel.addEventListener("touchmove", eqMove);
 
 
 
