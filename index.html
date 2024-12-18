@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EQ Trainer</title>
+    <link rel="stylesheet", href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="score-panel">
+            <p>SCORE:</p>
+            <p class="score-readout" data-score="0">0</p>
+        </div>
+        <div class="level-panel">
+            <p>LEVEL&nbsp</p>
+            <p class="level-readout" data-level="1">1</p>
+        </div>
+        <div class="lives-panel">
+            <p>LIVES:&nbsp</p>
+            <p class="lives-readout">3</p>
+        </div>
+    </div>
+
+    <div class="eq-panel" data-state="guessing">
+        <div class="freq-select" data-frequency="1100" data-octaves="1.5">
+            <div class="freq-select-area"></div>
+            <div class="freq-select-bar">
+                <p class="freq-readout">1,131</p>
+                <p class="freq-readout-hz">&nbspHz</p>
+            </div>
+            <div class="freq-select-area"></div>
+        </div>
+
+        <div class="freq-label-alt"><div></div><p>71Hz</p></div>
+        <div class="freq-label"><div></div><p>100Hz</p></div>
+        <div class="freq-label-alt"><div></div><p>141Hz</p></div>
+        <div class="freq-label"><div></div><p>200Hz</p></div>
+        <div class="freq-label-alt"><div></div><p>283Hz</p></div>
+        <div class="freq-label"><div></div><p>400Hz</p></div>
+        <div class="freq-label-alt"><div></div><p>566Hz</p></div>
+        <div class="freq-label"><div></div><p>800Hz</p></div>
+        <div class="freq-label-alt"><div></div><p>1.1kHz</p></div>
+        <div class="freq-label"><div></div><p>1.6kHz</p></div>
+        <div class="freq-label-alt"><div></div><p>2.3kHz</p></div>
+        <div class="freq-label"><div></div><p>3.2kHz</p></div>
+        <div class="freq-label-alt"><div></div><p>4.5kHz</p></div>
+        <div class="freq-label"><div></div><p>6.4kHz</p></div>
+        <div class="freq-label-alt"><div></div><p>9.1kHz</p></div>
+        <div class="freq-label"><div></div><p>12.8kHz</p></div>
+        <div class="freq-label-alt"><div></div><p>18.1kHz</p></div>
+
+        <div class="freq-target" data-frequency="1100">
+            <div class="freq-select-bar">
+                <p class="freq-target-readout">1,100</p>
+                <p class="freq-readout-hz">&nbspHz</p>
+            </div>
+        </div>
+        <div></div>
+    </div>
+
+    <button class="eq-button" data-state="off">
+        <p>EQ: OFF</p>
+    </button>
+
+    <div class="overlay">
+        <p>Welcome to EQ trainer!</p>
+        <p>Click anywhere to start.</p>
+    </div>
+
+    <audio loop preload="metadata"></audio>
+    <script src="config.js"></script>
+    <script src="songs.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

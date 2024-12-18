@@ -1,0 +1,178 @@
+html, body {
+    height: 100svh;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    box-sizing:border-box;
+    align-items: center;
+    overflow: hidden;
+
+    padding: 5svw;
+
+    background-color: rgb(42, 35, 86);
+}
+
+p {
+    margin: 0px;
+    color: rgb(235, 235, 238);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2svw;
+    cursor: default;
+    user-select: none;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.header>div {
+    display: flex;
+    flex-direction: row;
+    width: 33.3333%;
+}
+
+.score-panel {
+    justify-content: left;
+}
+
+.level-panel {
+    justify-content: center;
+}
+
+.lives-panel {
+    justify-content: right;
+}
+
+.score-readout {
+    width: 7svw;
+    text-align: center;
+}
+
+.eq-panel {
+    width: 100%;
+    margin: 2svw;
+    flex-grow: 1;
+
+    box-sizing:border-box;
+    padding: 0svw;
+
+    background-color: rgb(125, 115, 188);
+    border-radius: 0.5svw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.freq-label, .freq-label-alt {
+    width: 5%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.freq-label-alt {
+    box-sizing: border-box;
+    padding-bottom: 2svw;
+}
+
+.freq-label>div, .freq-label-alt>div {
+    width: 0.2svw;
+    min-width: 2px;
+    flex-grow: 1;
+    margin: 1svw;
+    background-color: rgb(235, 235, 238);
+}
+
+.freq-label-alt>div {
+    background-color: rgba(235, 235, 238, 0.5);
+}
+
+.freq-label>p, .freq-label-alt>p {
+    font-size: 1.5svw;
+}
+
+.freq-select, .freq-target {
+    width:0%;
+    margin: 0px;
+    border: 0px;
+    width: 100%;
+    margin-right: calc(-50% + 0.72svw);
+    margin-left: calc(-50% - 0.72svw);
+    height: 100%;
+    position: relative;
+    left: 50%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.freq-select-bar {
+    width: 0.2svw;
+    min-width: 2px;
+    background-color: rgb(42, 35, 86);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+.freq-readout, .freq-target-readout {
+    position: relative;
+}
+
+.freq-readout-hz {
+    position: relative;
+    font-size: 1svw;
+}
+
+.freq-select-area {
+    width: 4svw;
+    height: 100%;
+    background-color: rgba(42, 35, 86, 0.5);
+}
+
+.freq-target {
+    margin-right: calc(-50% - 0.71svw);
+    margin-left: calc(-50% + 0.71svw);
+    left: auto;
+    right: 50%;
+    visibility: hidden;
+}
+
+.eq-button {
+    width: 12svw;
+    height: 4svw;
+    border: none;
+    border-radius: 0.5svw;
+    background-color: rgb(112, 107, 145);
+}
+
+.eq-button[data-state="on"] {
+    background-color: rgb(125, 115, 188);
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0px;
+    left: 0px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
